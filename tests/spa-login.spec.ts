@@ -18,7 +18,7 @@ test('login on the Prod UA SPA project', async ({ page, context }) => {
   await page.locator('[data-testid="loginBtn"]').click();
 
   // Перевіряємо чи є кнопки "Профіль" та "Каса" на новій сторінці, щоб переконатись що ми дійсно залогінились
-  await page.locator('[data-testid="profileBtn"]').isVisible();
-  await page.locator('[data-testid="openCashboxBtn"]').isVisible();
+  await expect (await page.locator('[data-testid="profileBtn"]')).toBeVisible();
+  await expect (await page.locator('[data-testid="openCashboxBtn"]')).toBeVisible();
   
 });
