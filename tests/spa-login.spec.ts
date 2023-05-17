@@ -6,7 +6,6 @@ test('login on the Prod UA SPA project', async ({ page, context }) => {
   await page.waitForTimeout(3_000);
 
   // Відкриваємо форму логіну 
-  await page.locator('[data-testid="loginBtn"]').isVisible();
   await page.locator('[data-testid="loginBtn"]').click();
 
   // Заповнюємо поля логіну та паролю
@@ -14,7 +13,6 @@ test('login on the Prod UA SPA project', async ({ page, context }) => {
   await page.locator('[data-testid="loginFormPasswordInput"]').fill('Pinup2013');  
 
   // Тицяємо на кнопку "Log In"
-  await page.locator('[data-testid="loginBtn"]').isVisible();
   await page.locator('[data-testid="loginBtn"]').click();
 
   // Перевіряємо чи є кнопки "Профіль" та "Каса" на новій сторінці, щоб переконатись що ми дійсно залогінились
